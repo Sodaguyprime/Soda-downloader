@@ -1,0 +1,263 @@
+/* Pixel Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --pixel-bg: #1a1b1e;
+    --pixel-text: #ffffff;
+    --pixel-primary: #ff3850;
+    --pixel-secondary: #4dff91;
+    --pixel-accent: #2c2d31;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    background-color: var(--pixel-bg);
+    color: var(--pixel-text);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+}
+
+.main-content {
+    background: var(--pixel-accent);
+    padding: 25px;
+    border: 4px solid var(--pixel-text);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.downloads-panel {
+    background: var(--pixel-accent);
+    padding: 20px;
+    border: 4px solid var(--pixel-text);
+    border-radius: 4px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.downloads-panel h2 {
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: var(--pixel-secondary);
+}
+
+/* Input Styling */
+.url-input {
+    width: 100%;
+    padding: 15px;
+    background: var(--pixel-bg);
+    border: 3px solid var(--pixel-text);
+    color: var(--pixel-text);
+    font-size: 12px;
+    outline: none;
+    border-radius: 4px;
+}
+
+.url-input:focus {
+    border-color: var(--pixel-primary);
+}
+.download-item .speed,
+.download-item .eta {
+    font-size: 10px;
+    text-align: center;
+    color: var(--pixel-text);
+}
+
+/* Toggle Switch Styling */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.toggle-label {
+    font-size: 12px;
+    color: var(--pixel-text);
+}
+
+.toggle-switch {
+    width: 60px;
+    height: 30px;
+    position: relative;
+    border: 3px solid var(--pixel-text);
+    border-radius: 4px;
+    background: var(--pixel-bg);
+    cursor: pointer;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: var(--pixel-bg);
+    transition: 0.3s;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background: var(--pixel-primary);
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(26px);
+}
+
+.toggle-slider:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--pixel-text);
+    left: 2px;
+    top: 2px;
+    transition: 0.3s;
+}
+
+/* Quality Select */
+.quality-select {
+    width: 100%;
+    padding: 12px;
+    background: var(--pixel-bg);
+    border: 3px solid var(--pixel-text);
+    color: var(--pixel-text);
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+}
+
+.quality-select option {
+    background: var(--pixel-bg);
+    color: var(--pixel-text);
+    padding: 10px;
+}
+
+/* Button Styling */
+.pixel-button {
+    padding: 15px 30px;
+    background: var(--pixel-primary);
+    border: 3px solid var(--pixel-text);
+    color: var(--pixel-text);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.pixel-button:hover {
+    background: var(--pixel-text);
+    color: var(--pixel-primary);
+}
+
+/* Download Item Styling */
+.download-item {
+    background: var(--pixel-bg);
+    border: 2px solid var(--pixel-text);
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.download-item .status {
+    font-size: 10px;
+    text-align: center;
+    color: var(--pixel-secondary);
+}
+
+.download-item .speed,
+.download-item .eta {
+    font-size: 10px;
+    text-align: center;
+    color: var(--pixel-text);
+}
+@keyframes move-loading {
+    0% { background-position: 0 0; }
+    100% { background-position: 28px 0; }
+}
+
+/* Progress Bar */
+.progress-container {
+    height: 12px;
+    background: var(--pixel-bg);
+    border: 2px solid var(--pixel-text);
+    border-radius: 2px;
+    overflow: hidden;
+    width: 100%;
+}
+.progress-bar {
+    height: 100%;
+    background: var(--pixel-secondary);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.download-item .status {
+    font-size: 8px;
+    margin-top: 8px;
+    color: var(--pixel-secondary);
+}
+.download-item .title {
+    font-size: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    word-break: break-all;
+    color: var(--pixel-secondary);
+}
+/* Loading Animation */
+.loading .progress-bar {
+    background: repeating-linear-gradient(
+        45deg,
+        var(--pixel-secondary),
+        var(--pixel-secondary) 10px,
+        var(--pixel-primary) 10px,
+        var(--pixel-primary) 20px
+    );
+    background-size: 28px 28px;
+    animation: move-loading 1s linear infinite;
+}
+
+@keyframes move-loading {
+    0% { background-position: 0 0; }
+    100% { background-position: 28px 0; }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--pixel-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--pixel-text);
+    border: 2px solid var(--pixel-bg);
+}

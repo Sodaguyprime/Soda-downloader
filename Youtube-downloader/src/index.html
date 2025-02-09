@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel YouTube Downloader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Download Section -->
+        <div class="main-content">
+            <input type="text" 
+                   class="url-input" 
+                   id="link" 
+                   placeholder="PASTE YOUTUBE URL HERE"
+                   autocomplete="off">
+
+            <div class="toggle-container">
+                <span class="toggle-label">VIDEO</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="formatSwitch">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label">AUDIO</span>
+            </div>
+
+            <select id="qualitySelect" class="quality-select">
+                <option value="">SELECT QUALITY</option>
+            </select>
+
+            <div class="toggle-container" id="audioToggleContainer">
+                <span class="toggle-label">WITH AUDIO</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="audioSwitch" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+
+            <button onclick="selectDownloadPath()">Choose Download Folder</button>
+            <p id="currentPath">Current: Default</p>
+
+            <button class="pixel-button" onclick="senddata()">DOWNLOAD</button>
+        </div>
+
+        <!-- Downloads Panel -->
+        <div class="downloads-panel">
+            <h2>DOWNLOADS</h2>
+            <div id="downloadsList">
+                <!-- Downloads will be added here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="download.js"></script>
+</body>
+</html>
